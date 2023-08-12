@@ -1,4 +1,4 @@
-# Material UI - Next.js App Router example in TypeScript
+# 3d maps using Material UI - Next.js 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped using [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with Material UI installed.
 
