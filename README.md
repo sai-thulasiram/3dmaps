@@ -1,5 +1,9 @@
 # 3d maps using Material UI - Next.js 
 
+This prohect contains pages designed using matrial cards and map component in the same page. 
+
+WIP: want to pass state between card and map components
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped using [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with Material UI installed.
 
 ## How to use
