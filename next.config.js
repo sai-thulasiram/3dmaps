@@ -17,6 +17,9 @@ const nextConfig = {
       },
     ],
   },
+  env: {
+    NEXT_PUBLIC_MAPBOX_TOKEN: 'pk.eyJ1IjoibWFwc2FpIiwiYSI6ImNsbTJ5MmZvajB6N3AzZXA5cmIyMzV3YWoifQ.aBMiWfn5mRYjylCNUxISJQ'
+  },
 };
 
 module.exports = nextConfig;

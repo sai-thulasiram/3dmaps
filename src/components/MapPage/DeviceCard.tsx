@@ -9,7 +9,6 @@ import Collapse from '@mui/material/Collapse';
 import Avatar from '@mui/material/Avatar';
 import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
@@ -30,19 +29,25 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
   }),
 }));
 
-export default function DeviceCard({ card }: { card: CardData}) {
+export default function DeviceCard({ card, selectDevice, selectedDevice }: any) {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
+  const isSelectedDevice = () => {
+    return selectedDevice && card.title == selectedDevice.title;
+  };
+
   return (
-    <Card key={card.title} sx={{ width: '100%', marginBottom: '16px'}}>
+    <div onClick={() => selectDevice(card)}>
+    <Card key={card.title} sx={{ width: '100%', marginBottom: '16px', cursor: 'pointer', bgColor: isSelectedDevice() ? '#1976d2' : '#fff' }} 
+     >
       <CardHeader
         avatar={
-          <Avatar sx={{ bgcolor: '#444' }} aria-label="recipe">
-            R
+          <Avatar sx={{ bgcolor: '#1976d2' }} aria-label="recipe">
+            {card.title && card.title.charAt(0)}
           </Avatar>
         }
         action={
@@ -54,9 +59,6 @@ export default function DeviceCard({ card }: { card: CardData}) {
         subheader={card.subheader}
       />
       <CardActions disableSpacing>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
         <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}
@@ -68,11 +70,28 @@ export default function DeviceCard({ card }: { card: CardData}) {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>
-            Placeholder for content
-          </Typography>
+          <div style={{ borderTop: '1px solid lightgrey', padding: '20px ' }}>
+            
+            <Typography  variant="subtitle1" component="div">
+              100kms
+            </Typography>
+            <Typography component="div" variant="subtitle2" color="text.secondary" >
+               Range
+            </Typography>
+          </div>
+          <div style={{ borderTop: '1px solid lightgrey', padding: '20px ' }}>
+            
+            <Typography component="div" variant="subtitle1">
+              180 degress
+            </Typography>
+            <Typography variant="subtitle2" color="text.secondary" component="div" >
+            Azimuth
+            </Typography>
+          </div>
+          
         </CardContent>
       </Collapse>
     </Card>
+    </div>
   );
 }

@@ -14,9 +14,11 @@ export interface CardData {
 
 interface CardListProps {
   cards: CardData[];
+  selectDevice: (arg0: any) => void
+  selectedDevice: CardData
 }
 
-function CardList({ cards }: CardListProps) {
+function CardList({ cards, selectDevice, selectedDevice }: CardListProps) {
   const [expandedId, setExpandedId] = useState<number | null>(null);
 
   const handleExpandClick = (cardId: number) => {
@@ -27,7 +29,7 @@ function CardList({ cards }: CardListProps) {
     // <div style={{ width: '40%', gap: '16px' }}>
     <Box sx={{ flexDirection: 'column', width: '30%' }}>
       {cards.map((card, index) => (
-        <DeviceCard key={card.title} card={card} />
+        <DeviceCard key={card.title} card={card} selectDevice={selectDevice} selectedDevice={selectedDevice} />
       ))}
     </Box>
   );

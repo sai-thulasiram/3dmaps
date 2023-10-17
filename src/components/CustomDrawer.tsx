@@ -24,6 +24,7 @@ import ChecklistIcon from '@mui/icons-material/Checklist';
 import SettingsIcon from '@mui/icons-material/Settings';
 import SupportIcon from '@mui/icons-material/Support';
 import LogoutIcon from '@mui/icons-material/Logout';
+import DeviceHubIcon from '@mui/icons-material/DeviceHub';
 
 const drawerWidth = 240;
 
@@ -31,6 +32,7 @@ const LINKS = [
     { text: 'Home', href: '/', icon: HomeIcon },
     { text: 'Devices', href: '/starred', icon: StarIcon },
     { text: 'Tasks', href: '/tasks', icon: ChecklistIcon },
+    { text: 'MapView', href: '/mapview', icon: DeviceHubIcon },
   ];
   
   const PLACEHOLDER_LINKS = [
